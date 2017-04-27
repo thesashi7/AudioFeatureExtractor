@@ -16,7 +16,7 @@ Dependecies: numpy, matplotlib, scipy, sklearn, hmmlearn, simplejson, eyed3, pyd
  
   python fextractor.py "full path to your directory containing wav files"
   
-  Example of extracting from data folder is given below
+  **Example of extracting from data folder is given below**
   
   ```
   python fextractor.py /home/sashi/Documents/Spring2017/CS599/project/fex/data/
