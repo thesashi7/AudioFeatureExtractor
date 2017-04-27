@@ -2,6 +2,9 @@ import sys
 import csv
 import json
 from pyAudioAnalysis.audioFeatureExtraction import *
+
+#######################################################################################################
+#######################################################################################################
 #
 # FeatureExtractor uses pyAudioAnalysis library to extract audio features.
 # Currently we will need to clone the library locally, it is not found as a python package yet.
@@ -45,13 +48,17 @@ class FeatureExtractor:
     self.stStep = new_stStep
     self.computeBEAT = new_computeBEAT 
 
+  #################################################################
   #@return feature vectors
   # Multidimenstional array for more than one wave file
+  #
   def extract(self):
     return dirWavFeatureExtraction(self.file_path, self.mtWin, self.mtStep, self.stWin, self.stStep, self.computeBEAT)[0]  
 
+  ##################################################################
   #@features: feature vectors
   #@file_name: Name of the csv file that you want to write the featues to
+  #
   def write_csv(self,features,file_name="test-data"):
     with open(file_name+".csv", 'w') as csvfile:
       writer = csv.writer(csvfile,delimiter=',',quoting = csv.QUOTE_NONE)
@@ -67,13 +74,14 @@ class FeatureExtractor:
       for row in reader:
         print(row[0])"""
 
-
+##
 #(class)FeatureExtractor ENDS
-#########################################################################################################
+##
 
 
-
-
+###################################################################
+#                Main
+#
 def main():
   #Set your default path or else this will crash and burn in default mode
   file_path = "/home/sashi/Documents/Spring2017/CS599/project/fex/data/"
@@ -87,6 +95,9 @@ def main():
     fExt.write_csv(features, csv_file_name)
   #print features
 
+#
+#Entry point of script --> Entering Main
+#
 if  __name__ =='__main__':main()
 
 
