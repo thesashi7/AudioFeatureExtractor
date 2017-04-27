@@ -6,11 +6,15 @@
 
 Dependecies: numpy, matplotlib, scipy, sklearn, hmmlearn, simplejson, eyed3, pydub
 
+*Sample Data presented in data and data1 folders*
+
 **TO RUN**
 
   *extractor script --> fextractor.py*
   
-  Enter in terminal: python fextractor.py "full path to your directory containing wav files"
+  Enter in terminal: 
+  
+  python fextractor.py "full path to your directory containing wav files"
   
 **Please visit the following links for more details about pyAudioAnalysis:**
 
