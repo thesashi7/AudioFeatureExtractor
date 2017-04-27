@@ -40,6 +40,7 @@ class FeatureExtractor:
   #@new_stWin  : Short-Term window size usually between 20 to 100 ms (In Seconds)
   #@new_stStep : Short-Term step size (In Seconds)
   #@new_computeBEAT : Boolean Value to compute BEAT of audio (This is for Music Audio)
+  #
   def __init__(self, new_file_path, new_mtWin=10, new_mtStep=1, new_stWin=.02, new_stStep=.01, new_computeBEAT=False):
     self.file_path = new_file_path
     self.mtWin = new_mtWin
