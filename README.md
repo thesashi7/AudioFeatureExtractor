@@ -15,11 +15,12 @@ Dependecies: numpy, matplotlib, scipy, sklearn, hmmlearn, simplejson, eyed3, pyd
   Enter in terminal: 
  
   python fextractor.py "full path to your directory containing wav files"
+  Example of extracting from data 
   ```
-  python fextractor.py
+  python fextractor.py /home/sashi/Documents/Spring2017/CS599/project/fex/data/
  
 /home/sashi/Documents/Spring2017/CS599/project/fex/data/
-('wavFiles:', ['/home/sashi/Documents/Spring2017/CS599/project/fex/data/21013_44k.wav', '/home/sashi/Documents/Spring2017/CS599/project/fex/data/21621_44k.wav', '/home/sashi/Documents/Spring2017/CS599/project/fex/data/cat0.wav', '/home/sashi/Documents/Spring2017/CS599/project/fex/data/cat1.wav'])
+('wavFiles:', ['/home/sashi/Documents/Spring2017/CS599/project/fex/data/21013_44k.wav', '/home/sashi/Documents/Spring2017/CS599/project/fex/data/21621_44k.wav', '/home/sashi/Documents/Spring2017/CS599/project/fex/data/cat0.wav',  '/home/sashi/Documents/Spring2017/CS599/project/fex/data/cat1.wav'])
 Analyzing file 1 of 4: /home/sashi/Documents/Spring2017/CS599/project/fex/data/21013_44k.wav
 Analyzing file 2 of 4: /home/sashi/Documents/Spring2017/CS599/project/fex/data/21621_44k.wav
 Analyzing file 3 of 4: /home/sashi/Documents/Spring2017/CS599/project/fex/data/cat0.wav
