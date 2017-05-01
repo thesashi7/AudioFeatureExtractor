@@ -267,7 +267,7 @@ def stChromaFeatures(X, fs, nChroma, nFreqsPerChroma):
         C[nChroma] = spec
         C /= nFreqsPerChroma[nChroma]
     else:        
-        I = numpy.nonzero(nChroma>nChroma.shape[0])[0][0]        
+        I = numpy.nonzero(nChroma>=nChroma.shape[0])[0][0]        
         C = numpy.zeros((nChroma.shape[0],))
         C[nChroma[0:I-1]] = spec            
         C /= nFreqsPerChroma
@@ -615,7 +615,6 @@ def mtFeatureExtraction(signal, Fs, mtWin, mtStep, stWin, stStep):
     #for i in range(numOfStatistics * numOfFeatures + 1):
     for i in range(numOfStatistics * numOfFeatures):
         mtFeatures.append([])
-
     for i in range(numOfFeatures):        # for each of the short-term features:
         curPos = 0
         N = len(stFeatures[i])
@@ -625,12 +624,10 @@ def mtFeatureExtraction(signal, Fs, mtWin, mtStep, stWin, stStep):
             if N2 > N:
                 N2 = N
             curStFeatures = stFeatures[i][N1:N2]
-
             mtFeatures[i].append(numpy.mean(curStFeatures))
             mtFeatures[i+numOfFeatures].append(numpy.std(curStFeatures))
             #mtFeatures[i+2*numOfFeatures].append(numpy.std(curStFeatures) / (numpy.mean(curStFeatures)+0.00000010))
             curPos += mtStepRatio
-
     return numpy.array(mtFeatures), stFeatures
 
 
@@ -724,7 +721,7 @@ def dirWavFeatureExtraction(dirName, mtWin, mtStep, stWin, stStep, computeBEAT=F
     print(dirName)
     for files in types:
         wavFilesList.extend(glob.glob(os.path.join(dirName, files)))
-
+    #print(wavFilesList)
     wavFilesList = sorted(wavFilesList)    
     print("wavFiles:",wavFilesList)
     for i, wavFile in enumerate(wavFilesList):        
