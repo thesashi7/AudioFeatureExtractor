@@ -86,14 +86,20 @@ class FeatureExtractor:
 def main():
   #Set your default path or else this will crash and burn in default mode
   file_path = "/home/sashi/Documents/Spring2017/CS599/project/fex/data/"
+  csv_file_name = ""
   if(len(sys.argv)>1):
     file_path = sys.argv[1]
+  if(len(sys.argv)>2):
+     csv_file_name = sys.argv[2]
   fExt = FeatureExtractor(file_path)
   features  = fExt.extract()
-  write = raw_input("Do you want to write this to a CSV file?(Enter y for Yes or any key for NO):\n")
-  if(write.lower()=="y"):
-    csv_file_name = raw_input("Enter the name for your CSV file: ")
-    fExt.write_csv(features, csv_file_name)
+  if(len(csv_file_name)==0):
+    write = raw_input("Do you want to write this to a CSV file?(Enter y for Yes or any key for NO):\n")
+    if(write.lower()=="y"):
+      csv_file_name = raw_input("Enter the name for your CSV file: ")
+    else:
+       exit()
+  fExt.write_csv(features, csv_file_name)
   #print features
 
 #
